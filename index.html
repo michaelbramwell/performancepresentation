@@ -50,25 +50,26 @@
 
 				<section>
 					<section>
-						<h2>why</h2>
-						<blockquote>loading time is a major contributing factor to page abandonment...a 1 second delay in page response can result in a 7% reduction in conversions" (gomez.com, akamai.com)</blockquote>
+						<h2>Why</h2>
+						<blockquote>Loading time is a major contributing factor to page abandonment...a 1 second delay in page response can result in a 7% reduction in conversions" (gomez.com, akamai.com)</blockquote>
 					</section>
 					<section>
-						<h3>the problem with the modern day web...</h3>
-						<p>is there has never been a better time than now to develop for the web, however too much sugar can lead to health issues.</p>
+						<h3>The problem with the modern day web...</h3>
+						<p>...is there has never been a better time than now to develop for the web, however too much sugar can lead to health issues.</p>
 						<ul>
-							<li>media rich</li>
-							<li>frameworks lead to code bloat</li>
-							<li>js render only sites are slow to render</li>
+							<li class="fragment">Media rich</li>
+							<li class="fragment">Frameworks lead to code bloat</li>
+							<li class="fragment">Js dependant sites are slow to render</li>
 						</ul>		
 					</section>
 					<section>
 						<h3>westernaustralia.com (wacom)</h3>
 						<p>Large SharePoint 2013 web application with a big focus on rich media.</p>
 						<ul>
-							<li>slow time to render (2.5 - 3s)</li>
-							<li>slow speed index (10.5 - 12s)</li>
-							<li>slow to visually complete (12 - 13s)</li>
+							<li class="fragment">Slow time to render (2.5 - 3s)</li>
+							<li class="fragment">Slow speed index (10.5 - 12s)</li>
+							<li class="fragment">Slow to visually complete (12 - 13s)</li>
+							<li class="fragment"><a target="_blank"  href="https://speedcurve.com/westernaustralia/site/?s=3255&u=7081&b=chrome&r=ap-southeast-2&d=365">Speed Curve Stats</a></li>
 						</ul>	
 					</section>
 				</section>
@@ -77,17 +78,38 @@
 						<h2>Setting goals</h2>
 						<h3>Out of scope</h3>
 						<ul>
-							<li>Architectural overhall</li>
+							<li class="fragment">Architectural overhall</li>
+							<li class="fragment">Major server ops changes</li>
 						</ul>
 					</section>
 					<section>	
 						<h3>In scope</h3>
 						<ul>
-							<li>Setting goals - New Zealand tourism is the site to beat.</li>
-							<li>No rewrites, work with the code we have, which fortunately for me is pretty good.</li>
-							<li>Research; to identify the areas that once tackled will provide the best results and use of time...</li>
+							<li class="fragment">Setting goals - <a href="http://www.newzealand.com/au/" target="_blank">New Zealand</a> tourism is the site to beat.</li>
+
+							<li class="fragment">No rewrites, work with the code we have (which fortunately for me is pretty good).</li>
+							<li class="fragment">Research; to identify the areas that once tackled will provide the best results and use of time...</li>	
+						</ul>
+					</section>
+					<section>
+						<h2>Research</h2>
+						<p>Page load is no longer a valid metric.</p>
+						<ul>
+							<li class="fragment"><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/" target="_blank">Critical rendering path</a> (Ilya Grigorik @ Google) <blockquote>Optimizing for performance is all about understanding what happens in these intermediate steps between receiving the HTML, CSS, and JavaScript bytes and the required processing to turn them into rendered pixels - that’s the critical rendering path</blockquote></li>
+						</ul>
+					</section>
+					<section>
+						<ul>
+
+							<li><a href="http://baymard.com/blog/making-a-slow-site-appear-fast" target="_blank">Perceived Load time</a> (Above the Fold)<blockquote>Perceived load time is the time a visitor has to wait before being able to interact with your webpage.</blockquote></li>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li><a href="https://sites.google.com/a/webpagetest.org/docs/using-webpagetest/metrics/speed-index
+
+" target="_blank">Speed Index</a> <blockquote>The Speed Index is the average time at which visible parts of the page are displayed.  It is expressed in milliseconds and dependent on size of the view port.</blockquote></li>
 						</ul>	
-						<p class="fragment">Critical rendering path (Ilya Grigorik @ Google)</p>
 					</section>
 				</section>
 				<section>
@@ -97,51 +119,105 @@
 						<p>Look mum no scripts... almost</p>
 						<ul>
 							<li>Display essential content with nothing but html, defer custom and 3rd party scripts and inline essential css</li>
+						</ul>
+					</section>
+					<section data-background="/images/registerAboveTheFoldInlineCss.gif">
+						<img data-src="/images/registerAboveTheFoldInlineCss.gif" />
+					</section>
+					<section data-background="/images/registerDeferedCss.gif">
+					</section>
+					<section>
+						<ul>
 							<li>Server side rendering of essential content. </li>
-							<li>Presentable banner image that is tiny...</li>
-							<li class="fragment">Facebook research, Medium.com</li>
+							<li class="fragment">Presentable <a href="https://atdw-westernaustralia.imgix.net/https%3A%2F%2Fsecure.westernaustralia.com%2FSiteCollectionImages%2FAbout%2520WA%2Fabout-wa_flora-fauna.jpg%3FRenditionID%3D2?auto=format&q=75&h=42&w=117&blur=100&s=8777a7f209e1c35ab6da8c6b713e9ba7" target="_blank">banner image</a> that is tiny...</li>
+							<li class="fragment"><a href="https://code.facebook.com/posts/991252547593574/the-technology-behind-preview-photos/" target="_blank">Facebook research</a>, <a href="https://medium.com/cuepoint/the-secret-lives-of-vinyl-hoarders-fa519eee6fff#.8pq6rqv1g
+
+
+" target="_blank">Medium.com</a></li>
 						</ul>
 					</section>
-					<section>
+					<section data-background="https://exposure.imgix.net/production/photos/o9yul4e1hevobt9hsi6ppiyo2ocg14i0hvfy/original.jpg?fm=pjpg&auto=format&q=95&fm=jpg&w=800">
+						<p>&nbsp;</p>
 						<h3>ImgIX proxy service</h3>
-						<p>For every feature image we build on the server side an ImgIx src equivilant for Hero's, banners, products and features at various sizes, with the correct src then selected for display.</p>
+						<p>For every feature image we build on the server side an ImgIx src equivilant for Hero's, banners, products and features at various sizes, with the correct src then select the appropriate one for display.</p>
 					</section>
 					<section>
-						<h3>Sprite Sheets</h3>		
+						<img data-src="/images/ImgIxRenditionCodeMap.gif" />
 					</section>
+					<section data-background="/images/helpers.getRendition.gif"></section>
 					<section>
-						<h3>Third party bloat<h3>
+						<h3>Sprite Sheets</h3>
+						<p>DIY Sprite sheet generator</p>
+						<img data-src="/images/spriteSheetCss.gif" />
+					</section>
+					<section> <img data-src="/images/spriteSheetImage.gif" /></section>
+					<section>
+						<h3>Third party bloat</h3>
+						<p>A few solutions</p>
 						<ul>
-							<li>Bower></li>
-							<li>Stackla</li>
-							<li>Defer to load last</li>
+							<li class="fragment">Bower</li>
+							<li class="fragment">Stackla</li>
+							<li class="fragment">Defer scripts to load last</li>
 						<ul>
 					</section>
+					<section data-background="/images/stacklaAnd3rdPartyRequests.gif"></section>
+					<section><h3>Replace Widget with WebAPI (in progress)</h3></section>
+					<section data-background="/images/stacklaWebApiPayload.gif"></section>
+
 					<section>
-						<h3><SharePoint</h3>
+						<h3>SharePoint</h3>
 						<ul>
-							<li>SP.js</li>
-							<li>Corev15.cs</li>
+							<li class="fragment">SP.js => dependancies</li>
+							<li class="fragment">corev15.css (10,000 lines of css)</li>
+							<li class="fragment">Does your read only web application need these?</li>
 						</ul>
 					</section>
 					<section>
-						<h3>Caching</h3>
+					<h3>Caching</h3>
+					<p>Cache all the things (within reason)</p>
+					<ul>
+						<li class="fragment">Http Context Items for Application lifecycle cache (ATDW Products)</li>
+						<li class="fragment">Http Context Cache for longer living items (Sprite Generator)</li>
+						<li class="fragment">Memory Cache on service layer (Stackla Api)</li>
+					</ul>
+				</section>
+				<section>
+					<h3>HTTP Context Cache Helper</h3>
+					<img data-src="/images/cache1.gif" />
+				</section>
+				<section>
+					<h3>Memory Cache Helper</h3>
+					<img data-src="/images/cache2.gif" />
+				</section><section>
+					<ul>
+						<li>Static content caching using request headers - IIS/Varnish proxy</li>
+					</ul>
 					</section>	
-					</section>
+				</section>	
 				<section>
 					<h2>Tools</h2>
 					<ul>
-						<li>SpeedCurve</li>
-						<li>ImgIx</li>
+						<li class="fragment"><a href="https://speedcurve.com/westernaustralia/benchmark/?u=7088&b=chrome&r=ap-southeast-2&d=30&m=render&share=wm5y1raq5au0owpw0a5b9glzbz256e" target="_blank">SpeedCurve</a></li>
+
+						<li class="fragment"><a href="https://webapp.imgix.com/" target="_blank">ImgIx</a></li>
+						<li class="fragment">Browser => Dev tools (Network throttle & PageSpeed Tools)</li>
+						<li class="fragment"><a href="https://gtmetrix.com/reports/westernaustralia.com/toX1ck3W" target="_blank">GTmetrix</a></li>
 					</ul>
 				</section>
 				<section>
 					<h2>Results</h2>
+					<ul>
+						<li class="fragment">50% overall improvement</li>
+						<li class="fragment">Start render from 3s to 1s</li>
+						<li class=fragment">Speed index down from 11s 5.7s</li>
+						<li class="fragment">Complete page load still needs attention (stackla widget and tracking codes are the main culprits)</li>
+						<li class="fragment"><a href="https://speedcurve.com/westernaustralia/site/?s=3255&u=7081&b=chrome&r=ap-southeast-2&d=90" target="_blank">Results</a></li>
+
+					</ul>
 				</section>
 				<section>
 				<h2>Questions?</h2>
 				</section>
-				<section>
 				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
