@@ -15,6 +15,9 @@ handlers:
 
 - url: /lib
   static_dir: lib
+
+- url: /images
+  static_dir: images
   
 - url: /.*
   script: _go_app
